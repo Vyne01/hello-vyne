@@ -101,6 +101,15 @@
     <button onclick="sendMessage()">Send</button>
   </div>
 </section>
+<section id="journal">
+  <h2>Vyne Journal</h2>
+  <textarea id="journal-input" placeholder="Write anything on your mind..."></textarea>
+  <br />
+  <button onclick="saveJournal()">Save Entry</button>
+
+  <h3>Previous Entries</h3>
+  <ul id="journal-entries"></ul>
+</section>
 
   <script>
     function scrollToAbout() {

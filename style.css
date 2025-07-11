@@ -66,3 +66,36 @@ button {
   border-radius: 6px;
   cursor: pointer;
 }
+#journal {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #1e293b;
+  color: #f8fafc;
+}
+
+#journal textarea {
+  width: 80%;
+  height: 120px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  resize: none;
+  background-color: #0f172a;
+  color: #f8fafc;
+  margin-bottom: 10px;
+}
+
+#journal-entries {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+#journal-entries li {
+  background-color: #0f172a;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  text-align: left;
+}

@@ -28,3 +28,35 @@ async function sendMessage() {
     chatLog.innerHTML += `<p><strong>Vyne:</strong> Something went wrong (API failed)</p>`;
   }
 }
+function saveJournal() {
+  const input = document.getElementById("journal-input");
+  const text = input.value.trim();
+  if (!text) return;
+
+  const date = new Date().toLocaleString();
+  const entry = { text, date };
+
+  let entries = JSON.parse(localStorage.getItem("vyne_journal")) || [];
+  entries.unshift(entry); // newest first
+  localStorage.setItem("vyne_journal", JSON.stringify(entries));
+
+  input.value = "";
+  loadJournalEntries();
+}
+
+function loadJournalEntries() {
+  const entries = JSON.parse(localStorage.getItem("vyne_journal")) || [];
+  const ul = document.getElementById("journal-entries");
+  ul.innerHTML = "";
+
+  entries.forEach(entry => {
+    const li = document.createElement("li");
+    li.textContent = `[${entry.date}] ${entry.text}`;
+    ul.appendChild(li);
+  });
+}
+
+// Load journal on page load
+window.onload = function () {
+  loadJournalEntries();
+};
