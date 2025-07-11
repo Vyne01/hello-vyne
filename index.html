@@ -103,6 +103,15 @@
 </section>
 <section id="journal">
   <h2>Vyne Journal</h2>
+
+  <div class="mood-select">
+    <label>Select your mood today:</label><br />
+    <button onclick="setMood('😊')">😊</button>
+    <button onclick="setMood('😐')">😐</button>
+    <button onclick="setMood('😔')">😔</button>
+    <button onclick="setMood('😡')">😡</button>
+  </div>
+
   <textarea id="journal-input" placeholder="Write anything on your mind..."></textarea>
   <br />
   <button onclick="saveJournal()">Save Entry</button>

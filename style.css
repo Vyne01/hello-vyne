@@ -99,3 +99,21 @@ button {
   margin-bottom: 10px;
   text-align: left;
 }
+.mood-select {
+  margin: 10px 0;
+}
+
+.mood-select button {
+  font-size: 24px;
+  margin: 0 6px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background-color: #4ade80;
+  color: #0f172a;
+  cursor: pointer;
+}
+
+.mood-select button:hover {
+  background-color: #22c55e;
+}
