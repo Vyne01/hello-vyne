@@ -4,25 +4,99 @@
   <meta charset="UTF-8">
   <title>Hello Vyne</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #0f172a;
+      color: #f8fafc;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    span {
+      color: #4ade80;
+      font-weight: bold;
+      font-size: 36px;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #4ade80;
+    }
+
+    p {
+      font-size: 18px;
+      margin: 10px auto;
+      max-width: 700px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #4ade80;
+      color: #0f172a;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    iframe {
+      margin-top: 20px;
+      max-width: 100%;
+      border: none;
+      border-radius: 12px;
+    }
+  </style>
 </head>
 <body>
+
+  <!-- Section 1: Hero -->
   <div class="container">
     <h1>👋 Hello, I’m <span>Vyne</span></h1>
     <p>Your AI that grows with you – mind, body, and beyond.</p>
-    <button onclick="joinWaitlist()">Join Waitlist</button>
+    <button onclick="scrollToAbout()">What is Vyne?</button>
   </div>
-  <script src="script.js"></script>
+
+  <!-- Section 2: About -->
+  <section id="about">
+    <h2>What is Vyne?</h2>
+    <p>
+      Vyne is your personal AI companion — built to help you grow mentally, physically, and emotionally.
+      Whether you're a student chasing goals, someone working on fitness, or just trying to stay focused in life,
+      Vyne becomes your accountability partner, daily guide, and mental coach.
+    </p>
+    <p>
+      It's not just another chatbot. Vyne learns from you, grows with you, and reminds you every day why you started.
+    </p>
+  </section>
+
+  <!-- Section 3: Waitlist -->
+  <section id="waitlist">
+    <h2>Join the Movement</h2>
+    <p>Want early access to Vyne? Join the waitlist and be part of the next wave of personal AI.</p>
+
+    <!-- Replace the src below with your actual Google Form embed URL -->
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScGwagUmyR8436Q0Tmgqszt29U3MrCyc8VWTQxnw4qnQV57EA/viewform?embedded=true" width="640" height="689" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  </section>
+
+  <script>
+    function scrollToAbout() {
+      document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+
 </body>
 </html>
-<section id="about">
-  <h2>What is Vyne?</h2>
-  <p>Vyne is your personal AI companion — built for people who want to grow mentally, physically, and emotionally.</p>
-  <p>Whether you’re a student, a dreamer, or a hustler, Vyne helps you stay focused, track your goals, and evolve every day.</p>
-</section>
-<section id="waitlist">
-  <h2>Join the Movement</h2>
-  <p>Be one of the first to use Vyne. We’ll notify you as soon as the beta is ready.</p>
-  <iframe src="YOUR_GOOGLE_FORM_EMBED_URL_HERE"
-    width="100%" height="500"
-    style="border:none; border-radius:12px;"></iframe>
-</section>
