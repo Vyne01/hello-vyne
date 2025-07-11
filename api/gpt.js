@@ -1,3 +1,4 @@
+
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Only POST requests allowed" });
@@ -5,23 +6,16 @@ export default async function handler(req, res) {
 
   const { message } = req.body;
 
-  try {
-    const openaiRes = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer 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"
-      },
-      body: JSON.stringify({
-        model: "gpt-3.5-turbo",
-        messages: [{ role: "user", content: message }]
-      })
-    });
+  // Simulate Vyne's personality with a local fake response
+  const replies = {
+    hi: "Hey! I'm Vyne 👋 How can I support you today?",
+    hello: "Hello there! I'm your growth partner, Vyne 🌱",
+    help: "I can help you reflect, grow, track goals, or just talk 💬",
+    default: "I’m still learning, but I’m here with you 💚"
+  };
 
-    const data = await openaiRes.json();
-    res.status(200).json({ reply: data.choices[0].message.content });
-  } catch (error) {
-    res.status(500).json({ error: "Failed to fetch from OpenAI" });
-    console.error("OpenAI Error:", error);
-  }
+  const lower = message.trim().toLowerCase();
+  const reply = replies[lower] || replies.default;
+
+  res.status(200).json({ reply });
 }
